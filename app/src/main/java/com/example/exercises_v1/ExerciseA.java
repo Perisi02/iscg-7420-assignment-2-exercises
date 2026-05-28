@@ -39,9 +39,24 @@ public class ExerciseA extends AppCompatActivity {
     }
 
     public void openAddOperation(View view) {
+        showTextField();
+    }
+
+    public void cancelAdd(View view) {
+        hideTextField();
+    }
+
+    private void showTextField() {
         textFields.setVisibility(VISIBLE);
         btn_okayAdd.setVisibility(VISIBLE);
         btn_cancelAdd.setVisibility(VISIBLE);
         btn_createNew.setVisibility(GONE);
+    }
+
+    private void hideTextField() {
+        textFields.setVisibility(GONE);
+        btn_okayAdd.setVisibility(GONE);
+        btn_cancelAdd.setVisibility(GONE);
+        btn_createNew.setVisibility(VISIBLE);
     }
 }
