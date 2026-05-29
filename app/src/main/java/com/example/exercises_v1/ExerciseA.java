@@ -3,10 +3,14 @@ package com.example.exercises_v1;
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
+import static java.lang.Boolean.FALSE;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,8 +19,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class ExerciseA extends AppCompatActivity {
+    // Layout with the text fields for create new entity
     LinearLayout textFields;
 
+    EditText et_role;
+    EditText et_name;
+    EditText et_passive;
+    EditText et_affiliation;
+
+    // Buttons for create new entity
     Button btn_createNew;
     Button btn_cancelAdd;
     Button btn_okayAdd;
@@ -46,6 +57,9 @@ public class ExerciseA extends AppCompatActivity {
         hideTextField();
     }
 
+    public void addNew(View view) {
+    }
+
     private void showTextField() {
         textFields.setVisibility(VISIBLE);
         btn_okayAdd.setVisibility(VISIBLE);
@@ -59,4 +73,5 @@ public class ExerciseA extends AppCompatActivity {
         btn_cancelAdd.setVisibility(GONE);
         btn_createNew.setVisibility(VISIBLE);
     }
+
 }

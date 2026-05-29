@@ -18,7 +18,7 @@
 
     <!-- RecyclerView-->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_heroCards"
+        android:id="@+id/rv_entities"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
@@ -34,9 +34,30 @@
         android:layout_marginEnd="30dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="">
 
-        <!-- Attribute #1-->
+        <!-- Extra attribute-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profile Picture"
+                android:textAlignment="center"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:scrollbars="horizontal"
+                android:id="@+id/rv_image"/>
+
+
+        </LinearLayout>
+
+        <!-- Attribute #1 - Role-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,14 +70,14 @@
                 android:textAlignment="textEnd"/>
 
             <EditText
-                android:id="@+id/et_rolse"
+                android:id="@+id/et_role"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Role" />
         </LinearLayout>
 
-        <!-- Attribute #2-->
+        <!-- Attribute #2 - Name-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +97,7 @@
                 android:hint="Name" />
         </LinearLayout>
 
-        <!-- Attribute #3-->
+        <!-- Attribute #3 - Passive-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -96,7 +117,7 @@
                 android:hint="Passive role" />
         </LinearLayout>
 
-        <!-- Attribute #4-->
+        <!-- Attribute #4 - Affiliation-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -135,11 +156,11 @@
             <Button
                 android:id="@+id/btn_confirmAdd"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
                 android:onClick="addNew"
-                android:text="Confirm"
-                android:visibility="gone" />
+                android:text="Confirm" />
 
             <Button
                 android:id="@+id/btn_cancelAdd"
@@ -147,8 +168,7 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:onClick="cancelAdd"
-                android:text="Cancel"
-                android:visibility="gone" />
+                android:text="Cancel" />
 
             <Button
                 android:id="@+id/btn_createNew"
